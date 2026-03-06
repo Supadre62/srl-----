@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>课程主题库</title>
+    <link rel="stylesheet" href="assets/storybook.css" />
+    <style>
+      .theme-library {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .theme-button {
+        display: block;
+        border: 1px solid #cbd5e1;
+        border-radius: 16px;
+        background: #ffffff;
+        color: #0f172a;
+        padding: 16px 18px;
+        text-decoration: none;
+        transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+      }
+
+      .theme-button:hover {
+        border-color: #60a5fa;
+        background: #f8fbff;
+        transform: translateY(-1px);
+      }
+
+      .theme-button strong {
+        display: block;
+        font-size: 14px;
+        line-height: 1.4;
+      }
+
+      .theme-button span {
+        display: block;
+        margin-top: 6px;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.5;
+      }
+
+      .library-note {
+        color: #475569;
+        font-size: 14px;
+        line-height: 1.8;
+      }
+    </style>
+  </head>
+  <body class="theme-shell">
+    <header class="theme-topbar">
+      <div>
+        <span class="eyebrow">Theme Library</span>
+        <h1 style="margin: 10px 0 0">课程主题库</h1>
+      </div>
+      <a class="secondary" id="back-link" href="../">返回上一页</a>
+    </header>
+    <main class="book-layout">
+      <section class="hero-card">
+        <p class="library-note">每个主题都对应一套固定的微课程和任务材料。点击后可进入有声图书式微课程页面。</p>
+      </section>
+      <section class="theme-library">
+        <a class="theme-button" href="math-fraction.html"><strong>数学</strong><span>分数与整体占比</span></a>
+        <a class="theme-button" href="physics-force.html"><strong>物理</strong><span>力与平衡</span></a>
+        <a class="theme-button" href="chemistry-solution.html"><strong>化学</strong><span>溶液浓度变化</span></a>
+        <a class="theme-button" href="biology-ecosystem.html"><strong>生物</strong><span>生态系统关系</span></a>
+        <a class="theme-button" href="chinese-mainidea.html"><strong>语文</strong><span>主旨与细节</span></a>
+        <a class="theme-button" href="english-inference.html"><strong>英语</strong><span>阅读推断</span></a>
+        <a class="theme-button" href="history-causality.html"><strong>历史</strong><span>事件因果链</span></a>
+        <a class="theme-button" href="geography-region.html"><strong>地理</strong><span>区域比较</span></a>
+        <a class="theme-button" href="cs-algorithm.html"><strong>信息科技</strong><span>算法步骤</span></a>
+        <a class="theme-button" href="economics-supply-demand.html"><strong>经济</strong><span>供需变化</span></a>
+      </section>
+    </main>
+    <script id="theme-library-script">
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var returnTo = params.get('return_to');
+        var back = document.getElementById('back-link');
+
+        if (back) {
+          back.addEventListener('click', function (event) {
+            if (returnTo) {
+              event.preventDefault();
+              window.location.href = returnTo;
+              return;
+            }
+            if (window.history.length > 1) {
+              event.preventDefault();
+              window.history.back();
+            }
+          });
+        }
+
+        if (!returnTo) return;
+
+        var links = document.querySelectorAll('.theme-library a');
+        links.forEach(function (link) {
+          var href = link.getAttribute('href');
+          if (!href) return;
+          var separator = href.indexOf('?') >= 0 ? '&' : '?';
+          link.setAttribute('href', href + separator + 'return_to=' + encodeURIComponent(returnTo));
+        });
+      })();
+    </script>
+  </body>
+</html>

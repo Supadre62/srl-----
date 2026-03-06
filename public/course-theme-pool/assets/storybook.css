@@ -1,0 +1,302 @@
+.theme-shell {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(14, 165, 233, 0.18), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(251, 191, 36, 0.16), transparent 28%),
+    #f8fafc;
+  color: #0f172a;
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+.theme-topbar,
+.book-layout {
+  width: min(1080px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.theme-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 0 12px;
+}
+
+.theme-topbar a,
+.book-actions button,
+.task-actions a,
+.task-actions button {
+  border: 0;
+  border-radius: 999px;
+  background: #0f172a;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  padding: 12px 18px;
+  text-decoration: none;
+  transition: transform 180ms ease, opacity 180ms ease, background 180ms ease;
+}
+
+.theme-topbar a.secondary,
+.book-actions button.secondary,
+.task-actions a.secondary,
+.task-actions button.secondary {
+  background: #fff;
+  box-shadow: inset 0 0 0 1px #cbd5e1;
+  color: #0f172a;
+}
+
+.theme-topbar a:hover,
+.book-actions button:hover,
+.task-actions a:hover,
+.task-actions button:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.book-layout {
+  display: grid;
+  gap: 20px;
+  padding-bottom: 40px;
+}
+
+.hero-card,
+.story-card,
+.task-pack {
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(16px);
+}
+
+.hero-card {
+  display: grid;
+  gap: 14px;
+  padding: 28px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  width: fit-content;
+  border-radius: 999px;
+  background: #e0f2fe;
+  color: #0c4a6e;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  padding: 6px 12px;
+  text-transform: uppercase;
+}
+
+.hero-card h1,
+.story-text h2,
+.task-pack h2 {
+  margin: 0;
+  font-family: "Source Serif 4", "STSong", serif;
+}
+
+.hero-card p,
+.story-text p,
+.task-pack p,
+.task-pack li {
+  line-height: 1.8;
+}
+
+.story-card {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 0;
+  overflow: hidden;
+}
+
+.story-figure {
+  position: relative;
+  min-height: 420px;
+  background:
+    linear-gradient(160deg, rgba(14, 165, 233, 0.18), rgba(14, 165, 233, 0.05)),
+    linear-gradient(220deg, rgba(251, 191, 36, 0.12), rgba(248, 250, 252, 0.9));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.figure-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #0c4a6e;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 12px;
+}
+
+.figure-scene {
+  font-size: clamp(64px, 8vw, 108px);
+  transform-origin: center;
+  animation: floatScene 4s ease-in-out infinite;
+}
+
+.figure-caption {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  max-width: 250px;
+  border-radius: 20px;
+  background: rgba(15, 23, 42, 0.78);
+  color: #fff;
+  font-size: 14px;
+  padding: 14px 16px;
+}
+
+.story-text {
+  display: grid;
+  gap: 18px;
+  padding: 30px 28px;
+}
+
+.story-body {
+  display: grid;
+  gap: 12px;
+}
+
+.story-body p {
+  margin: 0;
+  color: #334155;
+}
+
+.story-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #475569;
+  font-size: 14px;
+}
+
+.story-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.story-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #cbd5e1;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.story-dots span.active {
+  background: #0284c7;
+  transform: scale(1.2);
+}
+
+.story-callout {
+  border-radius: 22px;
+  background: #f8fafc;
+  box-shadow: inset 0 0 0 1px #e2e8f0;
+  padding: 16px 18px;
+}
+
+.narration-status {
+  border-radius: 999px;
+  background: #e0f2fe;
+  color: #075985;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 12px;
+}
+
+.book-actions,
+.task-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.task-pack {
+  display: grid;
+  gap: 18px;
+  padding: 28px;
+}
+
+.task-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.task-card {
+  border-radius: 20px;
+  background: #f8fafc;
+  box-shadow: inset 0 0 0 1px #e2e8f0;
+  padding: 16px;
+}
+
+.task-card strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+@keyframes floatScene {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+}
+
+@media (max-width: 860px) {
+  .story-card {
+    grid-template-columns: 1fr;
+  }
+
+  .story-figure {
+    min-height: 300px;
+  }
+
+  .task-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  .theme-shell {
+    background: #fff;
+  }
+
+  .theme-topbar,
+  .book-actions,
+  .task-actions,
+  .hero-card,
+  .narration-status {
+    display: none !important;
+  }
+
+  .book-layout {
+    width: 100%;
+    padding: 0;
+  }
+
+  .story-card,
+  .task-pack,
+  .task-card {
+    box-shadow: none;
+    background: #fff;
+  }
+
+  .story-card {
+    grid-template-columns: 1fr;
+    page-break-inside: avoid;
+  }
+
+  .task-pack {
+    page-break-before: always;
+  }
+}

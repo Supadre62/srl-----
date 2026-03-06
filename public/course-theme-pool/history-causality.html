@@ -1,0 +1,53 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>鍘嗗彶 | 浜嬩欢鍥犳灉閾?/title>
+    <link rel="stylesheet" href="assets/storybook.css" />
+  </head>
+  <body class="theme-shell">
+    <header class="theme-topbar">
+      <a class="secondary" id="back-link" href="../">返回上一页</a>
+    </header>
+    <main class="book-layout">
+      <section class="hero-card">
+        <span class="eyebrow" id="subject"></span>
+        <h1 id="title"></h1>
+        <p id="summary"></p>
+      </section>
+      <section class="story-card">
+        <div class="story-figure">
+          <span class="figure-badge" id="scene-label"></span>
+          <div class="figure-scene" id="scene"></div>
+          <div class="figure-caption" id="scene-caption"></div>
+        </div>
+        <div class="story-text">
+          <div class="story-meta">
+            <span id="page-index"></span>
+            <div class="story-dots" id="story-dots"></div>
+          </div>
+          <h2 id="page-title"></h2>
+          <div class="story-body" id="page-body"></div>
+          <div class="story-callout" id="page-tip"></div>
+          <div class="narration-status" id="narration-status">鏃佺櫧鍑嗗涓?/div>
+          <div class="book-actions">
+            <button class="secondary" id="prev-page" type="button">涓婁竴椤?/button>
+            <button id="speak-page" type="button">閲嶆挱鏈〉鏃佺櫧</button>
+            <button id="next-page" type="button">涓嬩竴椤?/button>
+          </div>
+        </div>
+      </section>
+      <section class="task-pack" id="task-pack">
+        <h2>閰嶅浠诲姟棰勮</h2>
+        <p id="task-hint"></p>
+        <div class="task-grid" id="task-grid"></div>
+      </section>
+    </main>
+    <script>window.__THEME_BOOK_KEY__ = 'history-causality';</script>
+    <script src="assets/theme-books.js"></script>
+    <script src="assets/storybook.js"></script>
+  </body>
+</html>
+
+

@@ -1,24 +1,24 @@
-import type { Config } from 'tailwindcss';
+﻿import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  content: ['./index.html', './src/**/*.{ts,tsx}'],
+  content: ['./app/**/*.{js,ts,jsx,tsx,mdx}', './components/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
       fontFamily: {
         sans: ['"Noto Sans SC"', '"PingFang SC"', '"Microsoft YaHei"', 'sans-serif'],
         serif: ['"Source Serif 4"', 'serif'],
       },
+      boxShadow: {
+        panel: '0 10px 24px rgba(15, 23, 42, 0.08)',
+      },
       colors: {
         brand: {
-          50: '#f0fdfa',
-          100: '#ccfbf1',
-          600: '#0d9488',
-          700: '#0f766e',
-          800: '#115e59',
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          500: '#0ea5e9',
+          600: '#0284c7',
+          700: '#0369a1',
         },
-      },
-      boxShadow: {
-        panel: '0 10px 30px rgba(15, 23, 42, 0.06)',
       },
     },
   },

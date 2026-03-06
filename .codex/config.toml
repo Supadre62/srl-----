@@ -1,0 +1,28 @@
+project_root_markers = [".git", ".project-root"]
+
+model = "gpt-5.3-codex"
+
+approval_policy = "never"
+sandbox_mode = "danger-full-access"
+web_search = "live"
+
+model_reasoning_effort = "high"
+model_reasoning_summary = "concise"
+
+hide_agent_reasoning = true
+show_raw_agent_reasoning = false
+
+history.persistence = "save-all"
+history.max_bytes = 50000000
+
+project_doc_max_bytes = 131072
+project_doc_fallback_filenames = [
+  "README.md",
+  "CONTRIBUTING.md",
+  "PRD.md",
+  "SPEC.md",
+  "ARCHITECTURE.md",
+  ".agents.md"
+]
+
+personality = "pragmatic"
